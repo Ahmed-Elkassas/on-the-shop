@@ -4,7 +4,6 @@ const router = express.Router();
 
 const {products} = require('./admin');
 
-
 router.get('/', (req, res, next) => {
     res.render('shop/product-list', {pageTitle: 'Product List', products})
 })

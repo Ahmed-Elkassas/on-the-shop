@@ -1,5 +1,13 @@
+.from-inner  {
+    margin: auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
 .form-control {
     margin: 1rem 0;
+    max-width: 300px;
 }
 
 .form-control label,
