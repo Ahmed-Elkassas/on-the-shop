@@ -147,7 +147,7 @@ main {
   color: white;
 }
 
-/* footer */
+/* Footer */
 
 footer {
   text-align: center;
@@ -157,3 +157,14 @@ footer {
   background-color: #00695c;
   color: #fff;
 }
+
+/* Not Found */
+
+.not__found {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* .not__found  h1 {
+  text-align: center;
+} */
