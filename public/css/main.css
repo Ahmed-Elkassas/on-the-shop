@@ -36,9 +36,8 @@ body {
   font-family: 'Ubuntu', sans-serif; */
 }
 
-/* A elements that don't have a class get default styles */
-a:not([class]) {
-  text-decoration-skip-ink: auto;
+a {
+  text-decoration: none;
 }
 
 /* Make images easier to work with */
@@ -122,6 +121,8 @@ main {
 }
 
 .card__actions {
+  display: flex;
+  justify-content: center;
     padding: 1rem;
     text-align: center;
 }
@@ -138,6 +139,8 @@ main {
   background: white;
   border-radius: 3px;
   cursor: pointer;
+  margin: 1rem;
+  padding: 10px;  
 }
 
 .btn:hover,
@@ -156,6 +159,17 @@ footer {
   background-color: #00695c;
   color: #fff;
 }
+
+/* Product Details */
+
+.centered {
+  text-align: center;
+}
+.img__details img {
+ margin: auto;
+}
+
+/* Product Details */
 
 /* Not Found */
 
