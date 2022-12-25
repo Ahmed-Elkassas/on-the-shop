@@ -26,3 +26,8 @@ exports.getIndex = (req, res, next) => {
 exports.getCartList = (req, res, next) => {
     res.render('shop/cart', { pageTitle: 'Your Cart', path: 'cart' })
 }
+
+exports.postCart = (req, res, next) => {
+  const productId = req.body.productId;
+  console.log(productId)
+}
