@@ -1,7 +1,9 @@
 const express = require('express');
 
 const router = express.Router();
-const { getProductList } = require('../controllers/products')
+const { getProductList, getCartList } = require('../controllers/shop')
+
+router.get('/cart', getCartList)
 
 router.get('/', getProductList)
 
