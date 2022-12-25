@@ -1,6 +1,5 @@
 const Product = require("../models/product");
 
-
 exports.getAddProduct = (req, res, next) => {
     res.render('admin/add-product', {pageTitle: 'Add New Product'})
 }
@@ -12,6 +11,7 @@ exports.PostNewProduct =  (req, res, next) => {
 };
 
 exports.getProductList = (req, res, next) => {
-    const products = Product.fetchAll()
-    res.render('shop/product-list', {pageTitle: 'Product List', products})
+     Product.fetchAll(products => {
+        res.render('shop/product-list', {pageTitle: 'Product List', products})
+     })
 }
