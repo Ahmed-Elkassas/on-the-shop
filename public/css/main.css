@@ -32,12 +32,11 @@ html:focus-within {
 body {
   text-rendering: optimizeSpeed;
   font-family: 'Montserrat', sans-serif;
-  /* font-family: 'Sono', sans-serif;
-  font-family: 'Ubuntu', sans-serif; */
+  background-color: rgba(31, 34, 34, 0.959);
 }
-
+    
 a {
-  text-decoration: none;
+  text-decoration: none;    
 }
 
 /* Make images easier to work with */
