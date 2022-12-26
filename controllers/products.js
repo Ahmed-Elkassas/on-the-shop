@@ -1,7 +1,7 @@
 const Product = require("../models/product");
 
 exports.getAddProduct = (req, res, next) => {
-    res.render('admin/edit-product', {pageTitle: 'Add New Product', path: '/admin/add-product'})
+    res.render('admin/edit-product', {pageTitle: 'Add New Product', path: '/admin/add-product', editing: false})
 }
 
 exports.PostNewProduct =  (req, res, next) => {
@@ -18,7 +18,18 @@ exports.getEditProduct = (req, res, next) => {
   //** Important: The extracted value always is a string! so "true" instead of true.
   const editMode = req.query.edit;
   if(!editMode) res.redirect('/');
-  res.render('admin/edit-product', {pageTitle: 'Add New Product', path: '/admin/edit-product', editing: true})
+  const productId = req.params.productId;
+  Product.findById(productId, product => {
+    if(!productId) res.redirect('/')
+    res.render('admin/edit-product', 
+    {
+      pageTitle: 'Add New Product',
+     path: '/admin/edit-product', 
+     editing: true,
+     product
+    })
+  })
+ 
 }
 
 exports.getProducts = (req, res, next) => {
