@@ -14,8 +14,8 @@ exports.PostNewProduct = (req, res, next) => {
   const price = req.body.price;
   const description = req.body.description;
   const product = new Product(null, title, imgUrl, price, description);
-  product.save();
-  res.redirect("/");
+  product.save().then(() => res.redirect("/")).catch(err => console.log(err));
+  
 };
 
 exports.getEditProduct = (req, res, next) => {
