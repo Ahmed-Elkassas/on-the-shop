@@ -14,10 +14,10 @@ exports.PostNewProduct = (req, res, next) => {
   const price = req.body.price;
   const description = req.body.description;
   Product.create({
-    title,
-    price,
-    imgUrl,
-    description
+    title: title,
+    price: price,
+    imgUrl: imgUrl,
+    description: description
   }).then((result) => {
       console.log(result);
   }).catch((err) => {
