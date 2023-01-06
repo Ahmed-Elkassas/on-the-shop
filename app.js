@@ -24,26 +24,6 @@ app.use(shopRoutes);
 
 app.use(getError);
 
-// Product.belongsTo(User, {constrains: true, onDelete: 'CASCADE'});
-// User.hasMany(Product);
-
-// sequelize
-//   // .sync({force: true})
-//   .sync()
-//   .then((result) => {
-//    return User.findByPk(1);
-//   }).then(user => {
-//     if(!user) {
-//       return User.create({name: 'Ahmed', email: 'ahmed@test.com', })
-//     }
-//     return user;
-//   }).then((user) => {
-//     console.log(user);
-//     app.listen(3300)
-//   })
-//   .catch((err) => console.log(err));
-
-
 mongoConnect(() => {
   app.listen(3300);
 })

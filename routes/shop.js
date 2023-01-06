@@ -7,7 +7,7 @@ router.get('/', getIndex)
 
 router.get('/products', getProductList)
 
-// router.get('/products/:productId', getProduct)
+router.get('/products/:productId', getProduct)
 
 // router.get('/cart', getCartList);
 
