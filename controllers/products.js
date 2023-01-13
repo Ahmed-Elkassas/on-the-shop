@@ -76,12 +76,9 @@ exports.getProducts = (req, res, next) => {
     .catch((error) => console.log(error));
 };
 
-// exports.postDeleteProduct = (req, res, next) => {
-//   const productId = req.body.productId;
-//   Product.findByPk(productId)
-//     .then((product) => {
-//       return product.destroy();
-//     })
-//     .then((result) => res.redirect("/admin/products"))
-//     .catch((error) => console.log(error));
-// };
+exports.postDeleteProduct = (req, res, next) => {
+  const productId = req.body.productId;
+  Product.deleteById(productId)
+    .then(() => res.redirect("/admin/products"))
+    .catch((error) => console.log(error));
+};
