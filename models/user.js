@@ -17,6 +17,6 @@ class User {
         const db =  getDb();
         return db.collection('users').findOne({_id: new ObjectId(userId)})
     }
-}
+} 
 
 module.exports = User;

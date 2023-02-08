@@ -6,14 +6,14 @@ const {getAddProduct, PostNewProduct, getProducts, getEditProduct, postEditProdu
 
 router.get('/add-product', getAddProduct);
 
-router.get('/products', getProducts)
+// router.get('/products', getProducts)
 
 router.post('/add-product', PostNewProduct);
 
-router.get('/edit-product/:productId', getEditProduct);
+// router.get('/edit-product/:productId', getEditProduct);
 
-router.post('/edit-product', postEditProduct);
+// router.post('/edit-product', postEditProduct);
 
-router.post('/delete-product', postDeleteProduct)
+// router.post('/delete-product', postDeleteProduct)
 
 exports.routes = router
