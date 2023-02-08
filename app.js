@@ -35,10 +35,6 @@ app.use(shopRoutes);
 
 app.use(getError);
 
-// mongoConnect(() => {
-//   app.listen(3300);
-// })
-
 mongoose.set('strictQuery', true);
 mongoose
   .connect(
