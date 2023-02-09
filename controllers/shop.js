@@ -12,16 +12,16 @@ exports.getProductList = (req, res, next) => {
   }).catch(error => console.log(error))
 };
 
-// exports.getProduct = (req, res, next) => {
-//   const productId = req.params.productId;
-//   Product.findById(productId).then((product) => {
-//     res.render("shop/product-detail", {
-//       product: product,
-//       pageTitle: product.title,
-//       path: "/products",
-//     });
-//   }).catch(err => alert(err));
-// };
+exports.getProduct = (req, res, next) => {
+  const productId = req.params.productId;
+  Product.findById(productId).then((product) => {
+    res.render("shop/product-detail", {
+      product: product,
+      pageTitle: product.title,
+      path: "/products",
+    });
+  }).catch(err => alert(err));
+};
 
 exports.getIndex = (req, res, next) => {
   Product.find().then(products => {
