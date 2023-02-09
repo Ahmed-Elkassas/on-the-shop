@@ -1,22 +1,25 @@
-const {ObjectId} = require('mongodb')
+const mongoose = require("mongoose");
+const { schema } = require("./product");
 
-const { getDb } = require("../util/database");
+const { Schema } = mongoose;
 
-class User {
-    constructor(userName, email) {
-        this.userName = userName;
-        this.email = email;
-    }
+const userSchema = new Schema({
+  name: {
+    type: String,
+    required: true,
+  },
+  email: {
+    type: String,
+    required: true,
+  },
+  cart: {
+    items: [
+      {
+        productId: { type: Schema.Types.ObjectId },
+        quntity: { type: Number, required: true },
+      },
+    ],
+  },
+});
 
-    save() {
-        const db =  getDb();
-        return db.collection('users').insertOne(this)
-    }
-
-    static findById(userId) {
-        const db =  getDb();
-        return db.collection('users').findOne({_id: new ObjectId(userId)})
-    }
-} 
-
-module.exports = User;
+module.exports = mongoose.model('User', userSchema);
